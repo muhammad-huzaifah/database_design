@@ -1,0 +1,53 @@
+@startuml
+entity Artist{
+* id : Varchar
+--
+name : Varchar
+instagram : Varchar
+facebook : Varchar
+twitter : Varchar
+wikipedia : Varchar
+bio : Text
+}
+
+entity Album{
+* id : Varchar
+--
+* title : Varchar
+* release : Varchar
+* image : Varchar
+}
+
+entity Song{
+
+}
+
+entity Category{
+
+}
+
+entity Artist{
+
+}
+
+entity Playlist{
+
+}
+
+entity Podcast{
+
+}
+
+entity Episode{
+
+}
+
+entity User{
+
+}
+
+entity Concert{
+
+}
+
+@enduml
