@@ -54,12 +54,12 @@ entity PodcastCategory{
 
 entity Podcast{
     * id : VARCHAR
-        --
+    --
     * name : VARCHAR
     about : TEXT
     image : VARCHAR
     category_id : VARCHAR
-    *user_id : VARCHAR
+    * user_id : VARCHAR
 }
 
 entity Episode{
@@ -81,7 +81,13 @@ entity User{
 }
 
 entity Concert{
-
+    * id : VARCHAR
+    --
+    * event_at : DATETIME
+    * url : VARCHAR
+    * location : VARCHAR
+    lon : DOUBLE
+    lat : DOUBLE
 }
 
 @enduml
