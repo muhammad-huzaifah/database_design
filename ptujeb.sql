@@ -151,3 +151,57 @@ SELECT * FROM karyawan;
 ALTER TABLE karyawan
 MODIFY COLUMN jenis_karyawan CHAR(1) NOT NULL DEFAULT '*'
 AFTER jenis_kelamin;
+
+INSERT manajer
+VALUES ('20050001', 'AVANZA G', 'AB1674GA', 'PS'),
+       ('20050002', 'AVANZA G', 'AB1675GA', 'SD'),
+       ('20050003', 'RUSH G', 'AB6776BA', 'SD'),
+       ('20060003', 'RUSH G', 'AB7374SA', 'EN'),
+       ('20080003', 'BALENO', 'AB1111TA', 'RD');
+
+SELECT * FROM manajer;
+
+INSERT INTO sekretaris
+VALUES ('20060001', 'Inggris'),
+       ('20060001', 'Mandaris'),
+       ('20080002', 'Inggris'),
+       ('20090004', 'Inggris'),
+       ('20090004', 'Jerman');
+
+SELECT * FROM sekretaris;
+
+INSERT INTO teknisi
+VALUES ('20050004', 'Hardware'),
+       ('20050004', 'Jaringan Komputer'),
+       ('20080004', 'Jaringan Komputer'),
+       ('20080004', 'Linux'),
+       ('20090002', 'MySQL'),
+       ('20090002', 'Pemograman C'),
+       ('20090002', 'PHP'),
+       ('20090002', 'SQL Server'),
+       ('20090009', 'ASP'),
+       ('20090009', 'Foxpro'),
+       ('20090009', 'Jaringan Komputer');
+
+INSERT INTO teknisi_proyek
+VALUES ('20050004', 3, '2019/03/12', '2019/04/10'),
+       ('20050004', 4, '2019/04/20', null),
+       ('20050004', 5, '2019/06/01', '2019/07/01'),
+       ('20050004', 6, '2019/08/10', '2019/08/25'),
+       ('20080004', 4, '2019/04/27', null),
+       ('20080004', 5, '2019/06/01', '2019/06/15'),
+       ('20080004', 7, '2019/10/10', '2019/10/15'),
+       ('20080004', 8, '2019/11/15', null),
+       ('20090002', 1, '2019/02/01', null),
+       ('20090002', 2, '2019/02/01', null),
+       ('20090009', 1, '2019/02/01', null),
+       ('20090009', 2, '2019/02/01', null),
+       ('20090009', 8, '2019/11/15', '2019/11/25');
+
+SELECT * FROM teknisi_proyek;
+
+
+SELECT * FROM teknisi_proyek;
+
+DELETE FROM teknisi_proyek
+WHERE no_karyawan = 20050004;
