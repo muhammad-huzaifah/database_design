@@ -205,3 +205,67 @@ SELECT * FROM teknisi_proyek;
 
 DELETE FROM teknisi_proyek
 WHERE no_karyawan = 20050004;
+
+SELECT karyawan.nama, sekretaris.bahasa_asing
+FROM karyawan, sekretaris
+WHERE karyawan.no_karyawan = sekretaris.no_karyawan
+AND bahasa_asing <> 'Inggris';
+
+SELECT nama, tanggal_lahir FROM karyawan;
+
+SELECT id_proyek, deskripsi FROM proyek WHERE selesai = FALSE;
+
+SELECT nama FROM karyawan WHERE jenis_kelamin = TRUE;
+
+SELECT nama, tanggal_lahir FROM karyawan WHERE tanggal_lahir < '1980-01-01';
+
+SELECT * FROM karyawan;
+
+SELECT nama, jenis_karyawan FROM karyawan WHERE jenis_karyawan = 'S' OR jenis_karyawan = 'T';
+
+SELECT nama, tanggal_lahir FROM karyawan WHERE jenis_kelamin = TRUE AND tanggal_lahir <'1980-01-01';
+
+SELECT * FROM sekretaris;
+
+SELECT no_karyawan, bahasa_asing FROM sekretaris WHERE NOT bahasa_asing = 'Inggris';
+
+SELECT nama, tanggal_lahir FROM karyawan WHERE tanggal_lahir BETWEEN '1980-01-01' AND '1985-12-31';
+
+SELECT no_karyawan, nama FROM karyawan WHERE no_karyawan = '20050001' OR
+                                             no_karyawan = '20060002' OR
+                                             no_karyawan = '20080003';
+
+SELECT no_karyawan, nama FROM karyawan WHERE no_karyawan IN ('20050001', '20060002', '20080003');
+
+SELECT * FROM teknisi_proyek;
+
+SELECT no_karyawan FROM teknisi_proyek WHERE sampai_tanggal = 'null';
+
+SELECT no_karyawan FROM teknisi_proyek WHERE sampai_tanggal IS null;
+
+SELECT DISTINCT no_karyawan FROM teknisi_proyek WHERE sampai_tanggal  IS NULL;
+
+SELECT nama, jenis_karyawan, id_dep FROM karyawan WHERE jenis_karyawan = 'T' OR
+                                                        jenis_karyawan = 'M' AND
+                                                        id_dep <> 'EN';
+
+SELECT nama, jenis_karyawan, id_dep FROM karyawan WHERE (jenis_karyawan = 'T' OR
+                                                        jenis_karyawan = 'M') AND
+                                                        id_dep <> 'EN';
+
+SELECT nama FROM karyawan ORDER BY nama;
+
+SELECT nama FROM karyawan ORDER BY nama DESC ;
+
+SELECT jenis_kelamin, nama FROM karyawan ORDER BY jenis_kelamin, nama;
+
+SELECT jenis_kelamin, nama FROM karyawan ORDER BY jenis_kelamin;
+
+SELECT jenis_kelamin, nama FROM karyawan ORDER BY jenis_kelamin, nama DESC;
+
+SELECT DISTINCT karyawan.nama FROM karyawan, sekretaris
+WHERE karyawan.no_karyawan = sekretaris.no_karyawan
+AND sekretaris.bahasa_asing <> 'inggris';
+
+SELECT karyawan.nama, departemen.nama_dep, manajer.tipe, manajer.no_polisi FROM karyawan, departemen, manajer
+WHERE karyawan.no_karyawan = manajer.no_karyawan AND manajer.id_dep = departemen.id_dep;
